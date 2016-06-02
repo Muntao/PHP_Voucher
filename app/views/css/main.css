@@ -1,0 +1,102 @@
+/* 
+    Created on : 2016-05-01, 23:20:56
+    Author     : Muntao
+*/
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+    font-weight: 300;
+}
+
+.nitro-header-container{
+    margin: 0px 20px;
+}
+
+.nitro-text {
+    padding: 30px 30px;
+    margin: 0;
+}
+
+.nitro-header {
+    padding: 30px 10px;
+    background-color: #e8e4d3;
+    min-height: 400px;
+    background-repeat: no-repeat;
+}
+
+.nitro-headerLeft {
+    background-image: url(../images/img2.png);
+    background-position: 50% 80%;
+    background-size: 100%;
+    border-right: 5px solid white;
+}
+
+.nitro-headerRight {
+    background-image: url(../images/img1.png);
+    background-position: 50%;
+}
+
+
+.nitro-input {
+    border: none;
+    border-radius: 0px;
+    background-color: #eeeeee;
+}
+
+
+.nitro-form-voucher {
+    line-height: 2;
+}
+
+.nitro-button {
+    border: none;
+    border-radius: 0px;
+    background-color: black;
+    color: white;
+    padding: 3px 15px;
+}
+
+.nitro-label {
+    font-weight: normal;
+}
+
+.nitro-title {
+    font-size: 30px;
+    padding: 10px 30px;
+}
+
+.nitro-faq {
+    color: black;
+    text-decoration: underline;
+}
+
+.nitro-message {
+    height: 130px !important;
+    resize: none;
+}
+
+.nitro-select {
+    background: url(../images/arrow.png) no-repeat right #eee;
+    background-size: 18px 18px;
+    background-position: 97% 50%;
+    appearance: none;
+    -moz-appearance: none; 
+    -webkit-appearance: none;    
+    
+}
+
+.nitro-info {
+    text-align: center;
+    font-size: 30px;
+    font-style: italic;
+}
+
+.error {
+    color: red;
+    height: 0px;
+}
+
+.content {
+    padding: 0px 30px;
+}

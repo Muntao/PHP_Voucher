@@ -1,0 +1,107 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="nitro-title">GIFT VOUCHERS</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 nitro-header-container">
+            <div class="col-md-7 nitro-header nitro-headerLeft"></div>
+            <div class="col-md-5 nitro-header nitro-headerRight"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p class="nitro-text">This is a voucher that can be used for almost anything on out store - except Gift Vouchers or Subscriptions plans.</p>
+        </div>
+    </div>
+    {if="$success"}
+    <div class="alert alert-success fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success!</strong>
+    </div>
+    {if="$available"}
+    <div class="row">
+        <div class="col-md-12 content">
+            <p class="nitro-info">Sorry, this voucher is currently unavailable</p>
+
+        </div>
+    </div>
+    {/if}
+    <div class="row">
+        <div class="col-md-12 content">
+            <p><strong>From: </strong>{$from}</p> 
+            <p><strong>Your email address: </strong>{$email}</p> 
+            <p><strong>To: </strong>{$to}</p> 
+            <p><strong>Recipient's email address: </strong>{$recipient_email}</p> 
+            <p><strong>Voucher: &#163;{$amount}</strong></p> 
+            <p><strong>Message: </strong>{$message}</p>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <a href="#" class="nitro-faq">FAQs about our Gift Vouchers</a>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="pull-right">
+                        <a href="/">
+                            <button type="button" class="nitro-button">Back</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+        <br/>
+    </div>
+    {else}
+    <div class="row">
+        <div class="col-md-12">           
+            <form id="sendVoucher" class="nitro-form-voucher" name="sendVoucher" action="/index" method="POST">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <label class="nitro-label" for="from">From: </label><input id="from" class="form-control nitro-input" type="text" name="from" value="" placeholder="YOUR NAME HERE" required="" maxlength='50'/>
+                        <div id="fromError" class="error"></div><br/>
+                        <label class="nitro-label" for="email">Email: </label><input id="email" class="form-control nitro-input" type="text" name="email" value="" placeholder="YOUR EMAIL ADDRESS HERE" required="" maxlength='100'/>
+                        <div id="emailError" class="error"></div><br/>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="nitro-label" for="amount">Voucher Amount: </label>
+                        <select class="form-control nitro-input nitro-select" id="amount" name="amount">
+                            {loop="$vouchers"}
+                            <option value="{$value}">&#163;{$value}</option>                            
+                            {/loop}                            
+                        </select><br/>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <label class="nitro-label" for="to">To: </label><input class="form-control nitro-input" id="to" type="text" name="to" value="" placeholder="RECIPIENT'S NAME HERE" required="" maxlength='100'/>
+                        <div id="toError" class="error"></div><br/>
+                        <label class="nitro-label" for="recipient_email">Recipient's mail addresss </label><input class="form-control nitro-input" id="recipient_email" type="text" name="recipient_email" value="" placeholder="RECIPIENT'S EMAIL ADDRESS HERE" required=""/>
+                        <div id="remailError" class="error"></div><br/>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="nitro-label" for="to">Message: </label><textarea id="message" class="form-control nitro-input nitro-message" name='message'>Hi Frank &#10;Thinking of you with this voucher. Have fun! &#10;From Dave</textarea>
+                        <div id="messageError" class="error"></div><br/>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <a class="pull-left nitro-faq" href="#">FAQs about our Gift Vouchers</a>
+                    </div>
+                    <div class="col-md-6">
+                        <button id="send" class="pull-right nitro-button" type="submit">Buy GIFT Voucher</button>
+                    </div>
+                    <br/><br/><br/>
+                </div>                
+            </form>
+
+        </div>
+    </div>
+</div>
+{/if}
+
